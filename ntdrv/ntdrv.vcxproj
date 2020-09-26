@@ -208,6 +208,10 @@
   <ItemGroup>
     <ClCompile Include="ntdrv.c" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="register32.h" />
+    <ClInclude Include="register64.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

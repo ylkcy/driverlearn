@@ -148,7 +148,7 @@ NTSTATUS DispatchClose(PDEVICE_OBJECT pObject, PIRP pIrp)
 
 VOID DriverUnload(PDRIVER_OBJECT pDriverObject)
 {
-	UNICODE_STRING uLinkName={0};
+	UNICODE_STRING uLinkName = { 0 };
 	RtlInitUnicodeString(&uLinkName, LINK_NAME);
 	IoDeleteSymbolicLink(&uLinkName);
 	IoDeleteDevice(pDriverObject->DeviceObject);
@@ -200,6 +200,18 @@ NTSTATUS DriverEntry(PDRIVER_OBJECT pDriverObject, PUNICODE_STRING pRegPath)
 	pDriverObject->DriverUnload = DriverUnload;
 
 	DbgPrint("Driver load ok!\n");
+
+#ifdef _WIN32
+#include "register32.h"
+	EFLAGS eflags = GetEFlags();
+	DbgPrint("%x\n", eflags);
+#else
+#include "register64.h"
+	RFLAGS rflags = GetRFlags();
+	DbgPrint("%x\n", rflags);
+#endif
+
+
 
 	return STATUS_SUCCESS;
 }
