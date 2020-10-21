@@ -207,6 +207,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ntdrv.c" />
+    <ClCompile Include="String.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="register32.h" />

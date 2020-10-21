@@ -23,4 +23,20 @@
       <Filter>Driver Files</Filter>
     </Inf>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ntdrv.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="String.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="register32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="register64.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>

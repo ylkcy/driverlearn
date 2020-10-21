@@ -201,17 +201,5 @@ NTSTATUS DriverEntry(PDRIVER_OBJECT pDriverObject, PUNICODE_STRING pRegPath)
 
 	DbgPrint("Driver load ok!\n");
 
-#ifdef _WIN32
-#include "register32.h"
-	EFLAGS eflags = GetEFlags();
-	DbgPrint("%x\n", eflags);
-#else
-#include "register64.h"
-	RFLAGS rflags = GetRFlags();
-	DbgPrint("%x\n", rflags);
-#endif
-
-
-
 	return STATUS_SUCCESS;
 }
